@@ -27,4 +27,20 @@ MICROSERVICE:
 npm start
 ```
 * This will take use to the homepage:
-![homepage](image link)
+![Alt_text](https://github.com/paka16/LOGUE/blob/main/portfolio_github/homepage.PNG)
+
+2. The home page has three main navigation tabs: Home/Logue, Books, and FAQ along with a button to toggle Light/Dark mode for the user's preference.
+ * Dark Mode:
+ ![Alt_text]()
+
+3. Books Page:
+* The user can check their logged books along with four other functions: Add New Book, Update Book Progress, Search Personal Library (microservice), and Search Using OpenLibrary.
+![Alt_text](https://github.com/paka16/LOGUE/blob/main/portfolio_github/book1.PNG)
+![Alt_text](https://github.com/paka16/LOGUE/blob/main/portfolio_github/book2.PNG)
+* THe book logging is down in MySQL - (library.sql file) 
+
+4. FAQ:
+* The faq page consists of directions for the user's convenince. There is also a survey/'contact us' portion in case the the user needs to ask a more personal question.
+![Alt_text](https://github.com/paka16/LOGUE/blob/main/portfolio_github/faq1.PNG)
+![Alt_text](https://github.com/paka16/LOGUE/blob/main/portfolio_github/faq2.PNG)
+* The survey is inserted into a survey database (survey.sql file).
