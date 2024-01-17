@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CS 361 - FALL 23</title>  
+    <link rel="stylesheet" href="./css/style.css"  type="text/css">  
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    
+    
+
+    <div id="user-header" class="box-header">
+        <a href="/">ABOUT LOGUE.</a>
+    </div>
+    <div id="user-container" class="box-container">
+        <br>
+        FAQ. <br>
+        INFORMATION. <br> 
+         <br> <br>
+        <br>
+        <ul> TUTORIALS:
+            <li>SITE NAVIGATION.</li>
+            <li>ADD A BOOK.</li>
+            <li>EDIT PROGRESS.</li>
+            <li>DELETE A BOOK.</li>
+        </ul>
+        </div>
+
+    <div id="profile-header" class="box-header">FAQ.</div>
+    <div id="profile-container" class="box-container"><br>
+    <p><strong>How do I access other pages?</strong></p>
+    <p>Use the navigation bar! Or if on the home page, click on the major tabs!</p>
+    <br>
+    <p><strong>How can I contact you?</strong></p>
+    <p>Go to the FAQ tab and scroll to the bottom to fill out a form!</p>
+    <br><br>
+        <div id="tutorial - add">
+            <h3>TO ADD.</h3>
+            
+                <ol>
+                    <li>1. Navigate to the "Books" page.
+                </li>
+                <li>2. Scroll to the bottom to 'NEW BOOK.'. 
+                </li>
+                <li>3. Fill in the information and click the button. 
+                </li>
+                <li>4. Refresh page to see the new addition.</li>
+                </ol>
+                <br><br><br>
+            <h3>TO EDIT.</h3>
+            <ol><li>1. Navigate to the "Books" page.
+                </li>
+                <li>2. Scroll to the bottom to 'UPDATE PROGRESS.'. 
+                </li>
+                <li>3. Use the drop-down selection to find the book that needs to be updated. 
+                </li>
+                <li>4. Update the new progress and click the button.</li>
+                <li>5. Refresh page to see the new addition.</li></ol>
+                 <br><br><br>
+            <h3>TO DELETE.</h3>
+            <ol><li>1. Navigate to the "Books" page.
+                </li>
+                <li>2. Locate the BOOKS table. 
+                </li>
+                <li>3. Locate the book you wish to delete. 
+                </li>
+                <li>4. Click the 'Delete' button.</li></ol>
+            <br><br><br><br>
+            <form id="contact-form" action="/faq" method="POST">
+                <label for="contact-name">Name: </label>
+                <input type="text" name="contact-name" id="contact-name"> *
+                <br>
+                <label for="contact-email">Email: </label>
+                <input type="text" name="contact-email" id="contact-email"> *
+                <br>
+                <label for="contact-phone">Phone: </label>
+                <input type="text" name="contact-phone" id="contact-phone"> *
+                <br>
+                <label for="contact-subject">Issue: </label>
+                <input type="text" name="contact-subject" id="contact-subject"> *
+                <br>
+                <label for="contact-description">Description: </label>*<br>
+                <textarea rows="5" cols="40" name="contact-description" spellcheck="false" placeholder="Enter a description of the problem here!"> 
+        
+                </textarea>
+                <input type="submit">
+            </form>
+            <script type="text/javascript" src="./js/faq.js"></script>
+        </div>
+        <div></div>
+    </div>
+
+    
+
+    </main>
+    
+	
+
+    
+  </body>
+</html>

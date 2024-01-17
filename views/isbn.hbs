@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CS 361 - FALL 23</title>  
+    <link rel="stylesheet" href="./css/style.css"  type="text/css">  
+  </head>
+  <body>
+    <div id="user-header" class="box-header">
+        <a href="/">LIBRARY SEARCH.</a>
+    </div>
+    
+    <div id="user-container" class="box-container">
+        <br>
+        SEARCH. <br>
+        INFORMATION. <br> 
+         <br> <br>
+        <br>
+        <ul> TOP 10 ISBN:
+        </ul>
+    </div>
+
+    <table id="search-table">
+    <thead>
+        <tr>
+            <th>
+                isbn
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each data}}
+        <tr data-value={{this.isbn}}>
+            <td>{{this.isbn}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    </table>
+  </body>
+</html>

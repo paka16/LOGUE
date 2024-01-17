@@ -1,0 +1,45 @@
+<!-- main.hbs-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <link rel="stylesheet" href="./css/style.css"  type="text/css">    
+    <title>Book App</title>
+</head>
+<header>
+        <nav class=""navbar">
+            <a href="#" class="nav-brand">LOGUE.</a>
+            <div id="separater"></div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/books" class="nav-link">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/faq" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <button onclick="darkMode()"> Switch Mode </button>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            function darkMode() {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+                }
+        </script>
+    </header>
+    <script src="./js/script.js"></script>
+<body>
+    
+
+    {{{body}}}
+
+</body>
+<footer id="footer"></footer>
+</html>

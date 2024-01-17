@@ -1,0 +1,198 @@
+<body>
+
+<!-- index.hbs -->
+<div id="intro-header" class="box-header">
+        <a href="/books">BOOKS.</a>
+    </div>
+    <div id="intro-container" class="box-container">
+        <br>
+         <br>
+        <ul>
+            <li>Add a new book to the catalogue.</li>
+            <li>Edit a book in the catalogue.</li>
+            <li>Delete a book in the catalogue.</li>
+        </ul>
+        </div>
+        
+{{!-- <h1>The server is running!</h1>
+<p>If you see this text, the server is <strong>definitely</strong> working!</p> --}}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<div id="table-scroll" class="table-scroll">
+    {{!-- Create a table --}}
+<table id="book-table">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+            <th>delete</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr data-value={{this.id}}>
+            <td >{{this.id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.author}}</td>
+            <td>{{this.genres}}</td>
+            <td>{{this.ratings}}</td>
+            <td>{{this.progress}}</td>
+            <td>{{this.isbn}}</td>
+            <td><button onclick="delete_popup({{this.id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+<script src="./js/delete_book.js"></script>
+
+
+
+<!-- /views/index.hbs -->
+
+{{!-- Form to add a record to the table  --}}
+<br><br><br>
+<div id="add-form-header" class="box-header">NEW BOOK.</div>
+<div id="add-form-container" class="box-container">
+    <p>Insert the information and click the button to add the book to your storage.</p>
+<br>
+<form id="add-book-form" action="" method="POST">
+    <label for="input-title">Title: </label>
+    <input type="text" name="input-title" id="input-title"> *
+    <br>
+    
+    <label for="input-author">Author: </label>
+    <input type="text" name="input-author" id="input-author"> *
+    <br>
+
+    <label for="input-genres">Genres: </label>
+    <select name="input-genres" id="input-genres">
+        <option value="">Select Genre:</option>
+        {{#each genres}}
+        <option value="{{this.id}}">{{this.genre}}</option>
+        {{/each}}
+    </select>
+    <br>
+
+    <label for="input-ratings">Ratings: </label>
+    <select name="input-ratings" id="input-ratings">
+        <option value="">Select Rating:</option>
+        {{#each ratings}}
+        <option value="{{this.id}}">{{this.rating}}</option>
+        {{/each}}
+    </select>
+    <br>
+
+    <label for="input-progress">Progress: </label> 
+    <select name="input-progress" id="input-progress">
+        <option value="">Select Progress:</option>
+        {{#each progress}}
+        <option value="{{this.id}}">{{this.progress}}</option>
+        {{/each}}
+    </select> *
+    <br>
+    <label for="input-isbn">ISBN: </label>
+    <input type="text" name="input-isbn" id="input-isbn">
+    
+    
+    <br>
+    <label for="input-review">Review: </label>
+    <textarea rows="5" cols="40" name="input-review" spellcheck="false" placeholder="Enter your review here!"></textarea>
+        
+    
+    <br><br>
+    <input type="submit" value=" Add Book! ">
+</form>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script type="text/javascript" src="./js/add_book.js"></script>
+</div>
+
+<div id="html-search-header" class="box-header">SEARCH LIBRARY.</div>
+<div id="html-search-container" class="box-container">
+<h2>MICROSERVICE.</h2>
+<p>Type in a title and visit the microservice endpoint.</p>
+<div id="ms-form" >
+    <form id="ms-form" action="/microservice" method="POST">
+        <br>
+        <br>
+        <label for="ms-title">Title: </label>
+        <input type="text" name="ms-title" id="ms-title">
+        <br>
+        <br>
+    
+        <input type="submit" value=" Search Library! ">
+    </form>
+    <script type="text/javascript" src="./js/microservice.js"></script>
+ </div>
+</div>
+
+<div id="update-form-header" class="box-header">UPDATE PROGRESS.</div>
+<div id="update-form-container" class="box-container">
+<h2>Update Reading Progress.</h2>
+<p>Select the title then update the progress and rating.</p>
+<form id="update-progress-form" method="PATCH">
+    <br><br>
+    <label for="input-title">Title: </label>
+    <select name="input-title" id="selectedBook">
+        <option value="test">Select Book.</option>
+        {{#each data}}
+        <option value="{{this.id}}">{{this.title}} - {{this.author}}</option>
+        {{/each}}
+    </select>
+    <br><br>
+    <label for="input-progress">Progress: </label>
+    <select name="input-progress" id="input-progress-update">
+        <option>Select Progress</option>
+        {{#each progress}}
+        <option value="{{this.id}}">{{this.progress}}</option>
+        {{/each}}
+    </select>
+    <br>
+    <label for="input-ratings">Ratings: </label>
+    <select name="input-ratings" id="input-rating-update">
+        <option value="test">Select Rating.</option>
+        {{#each ratings}}
+        <option value="{{this.id}}">{{this.rating}}</option>
+        {{/each}}
+    </select>
+    <br>
+    <br>
+    <input type="submit" value=" Update Book! ">
+</form>
+<script type="text/javascript" src="./js/update_progress.js"></script>
+</div>
+
+<div id="google-search-header" class="box-header">OPENLIBRARY SEARCH. </div>
+<div id="google-search-container" class="box-container">
+<h2>Search for a Book using OPEN LIBRARY's API.</h2>
+<p>Type in a title key word and click the button.</p>
+<br><br><br>
+<form id="google-search-form" action="/search" method="POST">
+    <label for="search-title">Title: </label>
+    <input type="text" name="search-title" id="search-title"> *
+    <br>
+    <br>
+    <br>
+    <input type="submit" value=" Search Book! ">
+</form>
+
+{{!-- <script type="text/javascript" src="./js/search.js"></script> --}}
+</div>
+<div id="footer-spacer" class="footer-spacer"> <br> spacer </div>
+</body>
+<!-- checkbox within a select box 
+# https://stackoverflow.com/questions/17714705/how-to-use-checkbox-inside-select-option 
+-->

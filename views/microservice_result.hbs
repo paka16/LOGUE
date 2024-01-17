@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CS 361 - FALL 23</title>  
+    <link rel="stylesheet" href="./css/style.css"  type="text/css">  
+  </head>
+  <body>
+    <div id="user-header" class="box-header">
+        <a href="/">LIBRARY SEARCH.</a>
+    </div>
+    
+    <div id="user-container" class="box-container">
+        <br>
+        SEARCH. <br>
+        INFORMATION. <br> 
+         <br> <br>
+        <br>
+        {{!-- <ul> TUTORIALS:
+            <li>SITE NAVIGATION.</li>
+            <li>ADD A BOOK.</li>
+            <li>EDIT PROGRESS.</li>
+            <li>DELETE A BOOK.</li>
+        </ul> --}}
+    </div>
+    {{!-- Create a table --}}
+    <table id="search-table">
+
+    {{!-- Header section --}}
+    <thead>
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            <th>
+                id
+            </th>
+            <th>title</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr data-value={{this.id}}>
+            <td>{{this.id}}</td>
+            <td>{{this.title}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    </table>
+  </body>
+</html>
