@@ -21,6 +21,7 @@ MAIN PROJECT:
 MICROSERVICE:
 * Python
 * Stock API (https://www.alphavantage.co/), YFinance Module, Socket Module
+* https://github.com/paka16/361-microservice 
   
 ## HOW-TO
 1. in the ```database``` folder, add the necessary credentials for the ```user``` and ```password``` in the ```db-connector.js``` file. The ```databse``` portion is already filled with the name 'library' but feel free to change it to the database you are using.
